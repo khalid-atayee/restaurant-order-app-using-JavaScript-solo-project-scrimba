@@ -63,11 +63,37 @@ header{
 
     padding: 1em;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
-.footer-title, .footer-price{
+.footer-price{
     font-weight: bold;
 }
 .footer-title{
     text-align: center;
+    font-weight: bold;
+    display: none;
+}
+.show{
+    display: block;
+}
+.btn-danger{
+    margin-left:1em;
+}
+.footer-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.total-content{
+    border-top: 2px solid #DEDEDE;
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+    font-weight: bold;
+}
+.btn-danger{
+    color:red;
 }
