@@ -11,6 +11,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.7em;
     min-height: 112vh;
+    position: relative;
 }
 header{
     background-image: url('image/header.jpg');
@@ -96,4 +97,64 @@ header{
 }
 .btn-danger{
     color:red;
+}
+.order-btn{
+    padding: .7em 1.5em;
+    background-color: #16DB99;
+    width: 100%;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.order-btn:hover{
+    background-color:#16db99d3 ;
+}
+
+.model{
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px black;
+    position: absolute;
+    margin: 2em;
+    padding: 1em;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    visibility: hidden;
+}
+.show-model{
+    visibility:visible;
+}
+.model>h3{
+    color: black;
+    margin-left: 2em;
+}
+.model>input[type="text"]{
+    display: block;
+    margin: .5em;
+    padding: 1em;
+    width: 100%;
+}
+
+.pay-btn{
+    padding: .7em 1.5em;
+    background-color: #16DB99;
+    width: 100%;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.success-alert{
+    background-color: #ECFDF5;
+    color:#065F46;
+    /* opacity: .9; */
+    margin: 1em;
+    padding: 1em;
+    font-weight: bold;
+    display: none;
+}
+.show-alert{
+    display: block;
 }

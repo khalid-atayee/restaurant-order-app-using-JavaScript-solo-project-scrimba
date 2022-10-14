@@ -4,6 +4,9 @@ import  menuArray  from "./data.js";
 const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
 const footerTitle = document.querySelector('.footer-title');
+const model = document.querySelector('.model');
+const successAlert = document.querySelector('.success-alert')
+
 
 let content, footerContent, resultTotal, id, orders = []
 menuArray.forEach((menu) => {
@@ -31,6 +34,9 @@ btns.forEach((btn) => {
         id = btn.dataset.id;
         menuArray.forEach(element => {
             if (element.id == id) {
+            successAlert.classList.remove('show-alert')
+
+
                 orders.push(element)
                 renderOrder(orders)
             }
@@ -70,12 +76,14 @@ function renderOrder(orders) {
         `<div class="total-content">
             <p class="total-price">Total Price:</p>
             <p clsss="price">$${orderPrice}</p>
-                
-        </div>`
+            </div>
+            <button class="order-btn">Complete Order</button>
+        `
 
     })
 
-    footer.innerHTML += resultTotal
+    footer.innerHTML += resultTotal;
+    
 }
 document.addEventListener('click',(event)=>{
     let object_id ;
@@ -85,12 +93,31 @@ document.addEventListener('click',(event)=>{
                 return order.id!=object_id
 
             })
-            renderOrder(orders)
 
-            
+            renderOrder(orders)
+            if(orders.length==0){
+                footer.innerHTML='';
+            }
+
+        }
+        if(event.target.classList.contains('order-btn')){
+            model.classList.add('show-model')
+        
 
         }
 
+})
+model.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const formContent = new FormData(model)
+    const name = formContent.get('name')
+    const card = formContent.get('card')
+    const cvv = formContent.get('cvv')
+    model.classList.remove('show-model')
+    footer.innerHTML='';
+    successAlert.textContent = `Thanks, ${name} Your order is on its way`
+    successAlert.classList.add('show-alert')
+    
 })
 
 
