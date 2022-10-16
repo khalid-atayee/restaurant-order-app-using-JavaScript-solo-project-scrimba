@@ -1,7 +1,7 @@
 import { menuArray } from "./data.js";
 const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
-let content,footerContent,id, arraContent=[];
+let content,footerContent,id;
 menuArray.forEach((menu) => {
   content = `<div class="content">
                     <div class="description">
@@ -23,13 +23,10 @@ menuArray.forEach((menu) => {
 const btns = document.querySelectorAll('.btn');
 btns.forEach((btn)=>{
     btn.addEventListener('click', ()=>{
-        // demo =`<div class="footer-title">Your Order</div>`;
-        // demo = 'Your Order'
-
+    
         id = btn.dataset.id;
         menuArray.forEach(element => {
             if(element.id==id){
-                // arraContent.push(element)
                 
                 footerContent = `<div class="footer-content">
                                         <div class="footer-name">${element.name}</div>
@@ -37,7 +34,6 @@ btns.forEach((btn)=>{
                                 
                                 </div>`
                 
-                // console.log(arraContent.forEach(element => console.log(element)));
                 footer.innerHTML+=footerContent;
             }
             
