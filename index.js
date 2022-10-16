@@ -3,12 +3,14 @@ import  menuArray  from "./data.js";
 
 const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
+
 const footerTitle = document.querySelector('.footer-title');
 const model = document.querySelector('.model');
 const successAlert = document.querySelector('.success-alert')
 
 
 let content, footerContent, resultTotal, id, orders = []
+
 menuArray.forEach((menu) => {
     content = `<div class="content">
                     <div class="description">
@@ -28,6 +30,7 @@ menuArray.forEach((menu) => {
 });
 
 const btns = document.querySelectorAll('.btn');
+
 btns.forEach((btn) => {
     btn.addEventListener('click', () => {
 
@@ -39,6 +42,7 @@ btns.forEach((btn) => {
 
                 orders.push(element)
                 renderOrder(orders)
+
             }
 
         });
