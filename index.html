@@ -10,12 +10,27 @@
         <div class="container">
             <header></header>
             <main class="main"></main>
-            <footer class="footer"></footer>
+            <footer class="footer">
+                <div class="footer-title">Your Order</div>
+            </footer>
+            <!-- form start here -->
+            
+            <form class="model" >
+                <h3>Enter Card Details</h3>
+                <input name="name" type="text" required placeholder="Enter Your Name">
+                <input name="card" type="text" required placeholder="Enter Card Number">
+                <input name="cvv" type="text" required placeholder="Enter CVV">
+                <button class="pay-btn">Pay</button>
+            </form>
+            <p class="success-alert"></p>
+
+
+            <!-- form end here -->
                
         </div>
 
 
-        
+       
 	    <script src="index.js" type="module"></script>
     </body>
 </html>
